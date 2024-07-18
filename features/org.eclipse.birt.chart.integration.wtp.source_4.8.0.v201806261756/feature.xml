@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.birt.chart.integration.wtp.source" version="4.8.0.v201806261756" plugin="org.eclipse.birt.chart.integration.wtp.ui" label="%featureName" provider-name="%providerName">
+  <includes id="org.eclipse.birt.chart.integration.wtp" version="4.8.0.v201806261756"/>
+  <description url="http://www.eclipse.org/birt">
+      %description
+   </description>
+  <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+  <license url="%licenseURL">
+      %license
+   </license>
+  <plugin id="org.eclipse.birt.chart.integration.wtp.ui.source" version="4.8.0.v201806261756" download-size="0" install-size="0" unpack="false"/>
+</feature>
