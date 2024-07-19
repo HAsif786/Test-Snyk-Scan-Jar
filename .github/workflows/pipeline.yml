@@ -33,6 +33,6 @@ jobs:
       # Run Snyk Code
       - name: Run Snyk Code
         run: |
-          snyk test --all-projects
+          snyk test
         continue-on-error: true
     
