@@ -33,7 +33,7 @@ jobs:
        # Run Snyk Code
       - name: Run Snyk Code
         run: |
-          snyk code test --sarif  > results.sarif
+          snyk code test --sarif  > /home/runner/work/Test-Snyk-Scan-Jar/Test-Snyk-Scan-Jar/results.sarif
         continue-on-error: true
         
       - name: Checkout repository
@@ -42,7 +42,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: results.sarif
+          sarif_file: /home/runner/work/Test-Snyk-Scan-Jar/Test-Snyk-Scan-Jar/results.sarif
           # Optional category for the results
           # Used to differentiate multiple results for one commit
           category: my-analysis-tool
