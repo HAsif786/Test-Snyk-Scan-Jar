@@ -33,7 +33,7 @@ jobs:
       # Run Snyk Code
       - name: Run Snyk Code
         run: |
-          snyk test --scan-unmanaged --file=/features/
-          snyk test --scan-unmanaged --file=/plugins/
+          snyk test --scan-unmanaged --file=features/
+          snyk test --scan-unmanaged --file=plugins/
         continue-on-error: true
     
