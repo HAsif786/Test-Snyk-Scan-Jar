@@ -14,8 +14,8 @@ jobs:
 
     steps:
       # Checkout Code
-      - name: Checkout Code
-        uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - uses: actions/setup-node@v2
         with:
@@ -31,13 +31,19 @@ jobs:
         continue-on-error: true
 
        # Run Snyk Code
-      #- name: Run Snyk Code
-#       # run: |
-     #     snyk code test --sarif  > results.sarif
-      #  continue-on-error: true
+      - name: Run Snyk Code
+        run: |
+          snyk code test --sarif  > results.sarif
+        continue-on-error: true
         
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk.sarif
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
+          # Optional category for the results
+          # Used to differentiate multiple results for one commit
+          category: my-analysis-tool
     
