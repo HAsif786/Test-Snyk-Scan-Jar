@@ -36,7 +36,7 @@ jobs:
        # Run Snyk Code
       - name: Run Snyk Code
         run: |
-          snyk code test --sarif  > /home/runner/work/Test-Snyk-Scan-Jar/Test-Snyk-Scan-Jar/results.sarif
+          snyk code test --sarif  > ./results.sarif
         continue-on-error: true
         
       - name: Checkout repository
