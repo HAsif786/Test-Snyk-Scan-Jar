@@ -15,7 +15,9 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --sarif-file-output=snyk.sarif test --scan-all-unmanaged
+          args: --sarif-file-output=snyk.sarif 
+          command: test --scan-all-unmanaged
+          json: true
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
